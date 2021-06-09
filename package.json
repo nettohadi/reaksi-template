@@ -15,7 +15,6 @@
   "author": "hadi_sy",
   "license": "ISC",
   "dependencies": {
-    "@glidejs/glide": "^3.4.1",
     "reaksi": "^1.0.30"
   },
   "devDependencies": {
