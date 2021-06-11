@@ -4,7 +4,8 @@
   "description": "reaksi template",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --open",
+    "start": "webpack serve --open",
+    "dev": "webpack serve",
     "build": "webpack --mode production",
     "test": "test"
   },
@@ -15,7 +16,7 @@
   "author": "hadi_sy",
   "license": "ISC",
   "dependencies": {
-    "reaksi": "^1.0.30"
+    "reaksi": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
@@ -25,6 +26,7 @@
     "@babel/preset-typescript": "^7.13.0",
     "babel-loader": "^8.2.2",
     "html-webpack-plugin": "^5.3.1",
+    "terser-webpack-plugin": "^5.1.3",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0",
     "webpack-dev-server": "^3.11.2"
