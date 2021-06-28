@@ -1,9 +1,8 @@
-import Reaksi, {useState} from "reaksi";
+import {useState} from "reaksi";
 
 export default function App(){
     const [count, setCount] = useState(0);
     const handleCount = (number) => {
-        console.log('handlde count');
         setCount(count => count + number );
     }
     return (

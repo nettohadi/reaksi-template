@@ -4,6 +4,7 @@
     ["@babel/typescript", { "jsxPragma": "Reaksi.createElement" }]
   ],
   "plugins": [
-    ["@babel/transform-react-jsx", { "pragma": "Reaksi.createElement"}]
+    ["@babel/transform-react-jsx", { "pragma": "Reaksi.createElement"}],
+    ["auto-import", { "declarations": [{ "default": "Reaksi", "path": "reaksi" }]}]
   ]
 }
