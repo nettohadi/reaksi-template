@@ -1,6 +1,7 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
     context: __dirname,
@@ -26,7 +27,25 @@ module.exports = {
                 use: {
                     loader: "babel-loader"
                 }
-            }
+            },
+            {
+                test: /\.css$/i,
+                exclude: /node_modules/,
+                use: ['style-loader','css-loader']
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            publicPath: devMode ? '/public/images/' : '/images/',
+                            outputPath: 'images',
+                        },
+                    },
+                ],
+            },
         ]
     },
     resolve: {
@@ -35,12 +54,18 @@ module.exports = {
     plugins: [new htmlWebpackPlugin({
         filename: "index.html",
         hash: true,
-        publicPath: '/public/',
+        publicPath: devMode ? '/public/' : '/',
         template: './html_template/index.html'
     })],
     optimization: {
-        minimizer: [new TerserPlugin({
-            extractComments: false,
-        })],
+        minimizer: [
+            new TerserPlugin({
+                terserOptions: {
+                    keep_classnames: true,
+                    keep_fnames: true,
+                },
+                extractComments: false,
+            }),
+        ],
     },
 };
