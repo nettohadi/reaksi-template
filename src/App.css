@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500&family=Source+Sans+Pro&display=swap');
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    font-family: Source Sans Pro;
+}
+
+.reaksi-logo {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 240px;
+    display: flex;
+    color: #5a9631;
+}
+
+.reaksi-logo > h3 {
+    margin: 0px;
+}
+
+.reaksi-logo > img {
+    object-fit: cover;
+}
